@@ -14,8 +14,6 @@ body {
 
 header {
   background-color: #101010;
-  position: fixed;
-  z-index: 99;
 }
 
 .navbar-container {
@@ -59,6 +57,10 @@ header {
   list-style-type: none;
 }
 
+.navbar-container .menu {
+  display: none;
+}
+
 .navbar-container .nav-list li a {
   text-decoration: none;
   font-size: 19px;
@@ -72,7 +74,7 @@ header {
 }
 
 .content {
-  margin-top: 150px;
+  margin-top: 80px;
   width: 100%;
   display: flex;
 }
@@ -221,11 +223,15 @@ header {
   flex-direction: column;
   align-items: center;
   width: 40%;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 3px 20px 0 rgba(31, 38, 135, 0.37);
+  border-radius: 10px;
+  padding: 40px;
 }
 
 .isi-box h1 {
   font-size: 35px;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
 }
 
 .isi-box i {
@@ -245,7 +251,7 @@ header {
 }
 
 .isi-box #figma {
-  background: linear-gradient(#F24E1E , #FF7262 , #A259FF ,#1ABCFE , #0ACF83);
+  background: linear-gradient(#f24e1e, #ff7262, #a259ff, #1abcfe, #0acf83);
   background-clip: text;
   color: transparent;
 }
@@ -267,7 +273,7 @@ header {
 
 .box-recent {
   padding-top: 30px;
-  display: flex; 
+  display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   width: 85%;
@@ -280,11 +286,18 @@ header {
   padding: 25px 0;
 }
 
-.isi-box-rcn a{
+.isi-box-rcn a {
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 25px 0;
+  padding: 15px 0;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 1px 10px 0 #4335a7;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }
 
 .kontak {
@@ -368,7 +381,7 @@ header {
   padding: 5px;
   color: black;
   background-color: #ffffff;
-  border: 2px solid grey  ;
+  border: 2px solid grey;
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -438,8 +451,7 @@ footer {
   justify-content: center;
 }
 
-
-.logo h1 a{
+.logo h1 a {
   text-decoration: none;
   color: red;
 }
@@ -472,7 +484,9 @@ footer {
   font-size: 23px;
 }
 
-.sosial-media .ig, .yt, .fb, .tt, .gt {
+.sosial-media .ig,
+.tt,
+.gt {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -496,17 +510,7 @@ footer {
 
 .sosial-media .ig:hover {
   color: white;
-  background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4);
-}
-
-.sosial-media .yt:hover {
-  color: white;
-  background-color: red;
-}
-
-.sosial-media .fb:hover {
-  color: white;
-  background-color: blue;
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
 }
 
 .sosial-media .tt:hover {
@@ -531,4 +535,163 @@ footer {
   justify-content: center;
   align-items: center;
   color: white;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    width: 100%;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .kiri {
+    order: 2;
+  }
+  .kanan {
+    order: 1;
+  }
+
+
+  .navbar-container {
+    justify-content: space-between;
+  }
+
+  .navbar-container .menu {
+    display: block;
+    padding-right: 20px;
+  }
+
+  .navbar-container i {
+    color: white;
+    font-size: 30px;
+    padding: 10px;
+  }
+
+  .navbar-container .nav-list {
+    display: none;
+    position: absolute;
+    top: 70px;
+    border-radius: 10px;
+    left: 0px;
+    background-color: #101010;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .navbar-container ul{
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .navbar-container .nav-list.active {
+    display: flex;
+  }
+
+  .kiri,
+  .kanan {
+    width: 100%;
+  }
+
+  .about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .kiri-2 img {
+    margin-left: 0;
+    width: 80%;
+    height: auto;
+  }
+
+  .kanan-2 {
+    padding-top: 20px;
+    width: 90%;
+  }
+
+  .isi-kanan {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .isi-kanan-text h1 {
+    display: flex;
+    justify-content: center;
+    border: none;
+  }
+
+  .box {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .isi-box {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+
+  .box-recent {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .isi-box-rcn {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .box-hub {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .isi-kontak {
+    padding: 0;
+  }
+
+  .isi-hub {
+    text-align: center;
+    width: 80%;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .text h3{
+    font-size: 17px;
+  }
+
+  .text h1 {
+    font-size: 45px;
+  }
+
+  .text h5{
+    font-size: 18px;
+  }
+
+  .isi-kanan-text h1 {
+    font-size: 35px;
+  }
+  
+  .isi-kontak {
+    padding: 0;
+  }
+
+  .isi-hub{
+    text-align: center;
+    width: 80%;
+  }
+
+  .isi-hub p {
+    padding: 10px 10px;
+  }
+
+  .nav-footer {
+    gap: 15px;
+  }
 }
